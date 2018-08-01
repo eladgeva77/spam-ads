@@ -1,0 +1,8 @@
+
+/yarn-error.log
+/node_modules/
+/.idea/*
+/dist/test/
+/dist/index.html
+/dist/test.bundle.js
+/temp

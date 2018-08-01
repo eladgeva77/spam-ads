@@ -1,0 +1,18 @@
+<h2>
+  Ads
+</h2>
+<form id="timeFilter">
+  <input type="number" [(ngModel)]="startTimeFilter" name="startTimeFilter">
+  <input type="number" [(ngModel)]="endTimeFilter" name="endTimeFilter">
+</form>
+<ng-container *ngIf="myAdArray.length !==0">
+  <div *ngFor="let ad of myAdArray | timeFilter:startTimeFilter:endTimeFilter">
+      <time>{{ad.time | date:'hh:mm:ss'}}</time>
+      <img class="typeImage" [src]="getImageSrc(ad.adData)" alt=""/>
+      <span>{{ad.adData.creative.name}}</span>
+      <img class="typeImage" src="src/images/ic_insert_link_black_24px.svg" alt=""/>
+      <span>(x: {{ad.adData.coordinates.x}}</span>
+      <span>,y: {{ad.adData.coordinates.y}} )</span>
+  </div>
+</ng-container>
+
